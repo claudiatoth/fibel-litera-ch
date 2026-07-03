@@ -1,5 +1,5 @@
 /* ===========================================================
-   FIBEL — „Digraful ch cu Herzchen" · Claudia Toth © 2026
+   FIBEL — „Grupul de litere ch cu Herzchen" · Claudia Toth © 2026
    Abecedar german interactiv pentru copii 4–8 ani.
    Temă: Buch 📖 · „ch wie Buch" · „Herzchen liest ein Buch".
    ⚠️ ch = SUNET special — se aude la SFÂRȘIT / MIJLOC (Buch, Dach, Kuchen), nu la început.
@@ -170,7 +170,7 @@ SCREENS[0] = function(){
   show(
     hero() +
     '<p class="kicker">FIBEL · Abecedar german</p>' +
-    '<h1 class="title">Digraful ch cu Herzchen</h1>' +
+    '<h1 class="title">Grupul de litere ch cu Herzchen</h1>' +
     '<button class="big-btn" id="startBtn">▶ Hai să ne jucăm!</button>' + cont +
     '<p class="parent-note">Pentru părinte: „ch" e un sunet special — se aude la sfârșitul sau mijlocul cuvintelor (Bu<b>ch</b>, Da<b>ch</b>, Ku<b>ch</b>en). Parcurge ecranele cu copilul; apasă 🔊.</p>' +
     '<button class="parent-btn" id="parentOpen">👩‍🏫 Pentru părinți</button>'
@@ -190,7 +190,7 @@ SCREENS[1] = function(){
       '<button class="big-btn" id="bName">🔊 ch</button>' +
       '<button class="big-btn amber" id="bMaus">🔊 ch wie Buch</button>' +
     '</div>' +
-    '<p class="parent-note">„ch" e un <b>sunet</b> (ca în „ach"). Îl auzi la <b>sfârșit / mijloc</b>: Bu<b>ch</b> · Da<b>ch</b> · Ku<b>ch</b>en. Nu e la începutul cuvântului.</p>' +
+    '<p class="parent-note">„ch" e un <b>grup de două litere</b> (c + h) care se citesc ca <b>un singur sunet</b> (ca în „ach"). Îl auzi la <b>sfârșit / mijloc</b>: Bu<b>ch</b> · Da<b>ch</b> · Ku<b>ch</b>en. Nu e la începutul cuvântului.</p>' +
     nextBtn()
   );
   document.getElementById('bName').onclick = ()=>play('ch-name');
