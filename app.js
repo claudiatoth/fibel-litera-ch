@@ -40,7 +40,7 @@ const GRID = [
 const SPLIT = [
   {icon:'buch',   audio:'ch-buch',   syl:['Buch'],          sylA:['ch-syl-buch']},
   {icon:'kuchen', audio:'ch-kuchen', syl:['Ku','chen'],     sylA:['ch-syl-ku','ch-syl-chen']},
-  {icon:'banane', audio:'ch-banane', syl:['Ba','na','ne'],  sylA:['ch-syl-ba','ch-syl-na','ch-syl-ne']},
+  {icon:'romina', audio:'ch-romina', syl:['Ro','mi','na'],  sylA:['ch-syl-ro','ch-syl-mi','ch-syl-na']},
 ];
 const STORY = [
   {de:'Das ist <b class="m-bold">Herzchen</b>.',                              ro:'Acesta e Herzchen (inimioara).', icon:'herzchen', audio:'st-1'},
@@ -190,7 +190,7 @@ SCREENS[1] = function(){
       '<button class="big-btn" id="bName">🔊 ch</button>' +
       '<button class="big-btn amber" id="bMaus">🔊 ch wie Buch</button>' +
     '</div>' +
-    '<p class="parent-note">„ch" e un <b>grup de două litere</b> (c + h) care se citesc ca <b>un singur sunet</b> (ca în „ach"). Îl auzi la <b>sfârșit / mijloc</b>: Bu<b>ch</b> · Da<b>ch</b> · Ku<b>ch</b>en. Nu e la începutul cuvântului.</p>' +
+    '<p class="parent-note">„ch" e un <b>grup de două litere</b> (c + h) care se citesc ca <b>un singur sunet</b> — un h gutural, din gât (nu „ce", nu „ha"). Îl auzi la <b>sfârșit / mijloc</b>: Bu<b>ch</b> · Da<b>ch</b> · Ku<b>ch</b>en. Nu e la începutul cuvântului.</p>' +
     nextBtn()
   );
   document.getElementById('bName').onclick = ()=>play('ch-name');
@@ -272,13 +272,13 @@ SCREENS[4] = function(){
 
 /* 5 — LEGARE SILABE (unește silabele → cuvânt) */
 SCREENS[5] = function(){
-  const LEFT  = ['Ku','No','Mo','O'];
-  const RIGHT = ['chen','ra','na','ma'];
+  const LEFT  = ['Ku','En','No','Mo'];
+  const RIGHT = ['chen','te','ra','na'];
   const VALID = {
     'Ku|chen': {w:'Kuchen', a:'ch-kuchen'},
+    'En|te':   {w:'Ente',   a:'ch-ente'},
     'No|ra':   {w:'Nora',   a:'ch-nora'},
-    'Mo|na':   {w:'Mona',   a:'ch-mona'},
-    'O|ma':    {w:'Oma',    a:'ch-oma'}
+    'Mo|na':   {w:'Mona',   a:'ch-mona'}
   };
   const need = LEFT.length;
   let leftTiles  = shuffle(LEFT).map((s,i)=>'<button class="syll s-left" data-s="'+s+'" data-i="'+i+'">'+s+'</button>').join('');
