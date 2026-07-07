@@ -248,8 +248,8 @@ SCREENS[3] = function(){
 /* 4 — CITEȘTE! cuvinte + propoziții */
 SCREENS[4] = function(){
   const READ = [
-    {t:'Buch', a:'ch-buch'}, {t:'Dach', a:'ch-dach'}, {t:'Bach', a:'ch-bach'},
-    {t:'Loch', a:'ch-loch'}, {t:'Oma', a:'ch-oma'}, {t:'Tom', a:'ch-tom'}
+    {t:'Buch', a:'ch-art-buch'}, {t:'Dach', a:'ch-art-dach'}, {t:'Bach', a:'ch-art-bach'},
+    {t:'Loch', a:'ch-art-loch'}, {t:'Oma', a:'ch-oma'}, {t:'Tom', a:'ch-tom'}
   ];
   const SENT = [
     {t:'Tom hat ein Buch.', a:'st-tomhatbuch'}, {t:'Udo hat ein Dach.', a:'st-udohatdach'}
