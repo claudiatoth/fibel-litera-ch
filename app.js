@@ -17,12 +17,12 @@ const TOTAL_STEPS = 17;
 
 /* ---------- dictionar de cuvinte (toate cu „ch") ---------- */
 const CH = {
-  buch:   {de:'das Buch',   icon:'buch',   audio:'ch-buch',   gen:'n', art:'das', ro:'cartea',       m:true},
-  kuchen: {de:'der Kuchen', icon:'kuchen', audio:'ch-kuchen', gen:'m', art:'der', ro:'prăjitura',    m:true},
-  dach:   {de:'das Dach',   icon:'dach',   audio:'ch-dach',   gen:'n', art:'das', ro:'acoperișul',   m:true},
-  bach:   {de:'der Bach',   icon:'bach',   audio:'ch-bach',   gen:'m', art:'der', ro:'pârâul',       m:true},
-  koch:   {de:'der Koch',   icon:'koch',   audio:'ch-koch',   gen:'m', art:'der', ro:'bucătarul',    m:true},
-  loch:   {de:'das Loch',   icon:'loch',   audio:'ch-loch',   gen:'n', art:'das', ro:'gaura',        m:true},
+  buch:   {de:'das Buch',   icon:'buch',   audio:'ch-buch', audioArt:'ch-art-buch',   gen:'n', art:'das', ro:'cartea',       m:true},
+  kuchen: {de:'der Kuchen', icon:'kuchen', audio:'ch-kuchen', audioArt:'ch-art-kuchen', gen:'m', art:'der', ro:'prăjitura',    m:true},
+  dach:   {de:'das Dach',   icon:'dach',   audio:'ch-dach', audioArt:'ch-art-dach',   gen:'n', art:'das', ro:'acoperișul',   m:true},
+  bach:   {de:'der Bach',   icon:'bach',   audio:'ch-bach', audioArt:'ch-art-bach',   gen:'m', art:'der', ro:'pârâul',       m:true},
+  koch:   {de:'der Koch',   icon:'koch',   audio:'ch-koch', audioArt:'ch-art-koch',   gen:'m', art:'der', ro:'bucătarul',    m:true},
+  loch:   {de:'das Loch',   icon:'loch',   audio:'ch-loch', audioArt:'ch-art-loch',   gen:'n', art:'das', ro:'gaura',        m:true},
   maus:  {de:'die Maus',  icon:'m-maus',audio:'ch-maus',  gen:'f', art:'die', ro:'șoricelul', m:false},
   mond:  {de:'der Mond',  icon:'m-mond',audio:'ch-mond',  gen:'m', art:'der', ro:'luna',      m:false},
   katze: {de:'die Katze', icon:'katze', audio:'ch-katze', gen:'f', art:'die', ro:'pisica',    m:false},
@@ -241,7 +241,7 @@ SCREENS[3] = function(){
     '<h1 class="title" style="font-size:1.5rem">Cuvinte cu „ch"</h1>' +
     '<div class="cards">'+cards+'</div>' + nextBtn()
   );
-  stage.querySelectorAll('.card').forEach(el=>{ el.onclick = ()=>{ el.classList.add('tapped'); play(CH[el.dataset.k].audio); }; });
+  stage.querySelectorAll('.card').forEach(el=>{ el.onclick = ()=>{ el.classList.add('tapped'); play(CH[el.dataset.k].audioArt||CH[el.dataset.k].audio); }; });
   wireNext(4);
 };
 
@@ -512,8 +512,9 @@ SCREENS[11] = function(){
       nextBtn()
     );
     const fc = document.getElementById('fc');
-    fc.onclick = ()=>{ fc.classList.toggle('flipped'); play(w.audio); };
-    play(w.audio);
+    const _wav = w.audioArt||w.audio;
+    fc.onclick = ()=>{ fc.classList.toggle('flipped'); play(_wav); };
+    play(_wav);
     const pv=document.getElementById('cprev'), nx=document.getElementById('cnext');
     pv.disabled = (i<=0); nx.disabled = (i>=WORDS_CH.length-1);
     pv.onclick = ()=>{ if(i>0){ i--; card(); } };
